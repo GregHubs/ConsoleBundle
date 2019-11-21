@@ -15,12 +15,12 @@ use CoreSphere\ConsoleBundle\Contract\Executer\CommandExecuterInterface;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Templating\EngineInterface;
+use Twig_Environment;
 
 class ConsoleController
 {
     /**
-     * @var EngineInterface
+     * @var Twig_Environment
      */
     private $templating;
 
@@ -54,7 +54,7 @@ class ConsoleController
     public function consoleAction()
     {
         return new Response(
-            $this->templating->render('CoreSphereConsoleBundle:Console:console.html.twig', [
+            $this->templating->render('@CoreSphereConsole/Console/console.html.twig', [
                 'working_dir' => getcwd(),
                 'environment' => $this->environment,
                 'commands' => $this->application->all(),
@@ -78,7 +78,7 @@ class ConsoleController
 
         return new Response(
             $this->templating->render(
-                'CoreSphereConsoleBundle:Console:result.json.twig',
+                '@CoreSphereConsole/Console/result.json.twig',
                 ['commands' => $executedCommandsOutput]
             )
         );

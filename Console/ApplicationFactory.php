@@ -13,6 +13,7 @@ namespace CoreSphere\ConsoleBundle\Console;
 
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
 
 class ApplicationFactory
@@ -43,7 +44,7 @@ class ApplicationFactory
     }
 
     /**
-     * @return Bundle[]
+     * @return BundleInterface[]
      */
     private function getBundlesFromKernel(KernelInterface $kernel)
     {
