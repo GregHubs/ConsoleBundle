@@ -1,6 +1,6 @@
 {
-    "name": "coresphere/console-bundle",
-    "description": "This bundle allows you accessing the symfony2 console via your browser",
+    "name": "greghubs/console-bundle",
+    "description": "This bundle allows you accessing the symfony4 console via your browser - fork from coreSphere bundle with SF4 compatibility added",
     "keywords": ["console","javascript","symfony"],
     "type": "symfony-bundle",
     "license": "MIT",
@@ -12,6 +12,10 @@
         {
             "name": "Marmus Ullman",
             "email": "mail@markus-ullmann.de"
+        },
+        {
+            "name": "Pons Gregory",
+            "email": "ponsgregory@gmail.com"
         }
     ],
     "require": {
